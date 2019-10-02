@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://background.png" type="Texture" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://ship.png" type="Texture" id=3]
+[ext_resource path="res://Projectile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://red-shot.png" type="Texture" id=5]
 
 [node name="Main" type="Node2D"]
+position = Vector2( -0.670197, -1.40528 )
 
 [node name="BackgroundSprite" type="Sprite" parent="."]
 position = Vector2( 240.306, 400.5 )
@@ -11,3 +16,47 @@ texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2( 245, 750 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( 0.0837097, 0.0926971 )
+scale = Vector2( 4.66667, 4.83333 )
+texture = ExtResource( 3 )
+
+[node name="Projectile" parent="." instance=ExtResource( 4 )]
+position = Vector2( 261.784, 722.997 )
+
+[node name="Sprite" type="Sprite" parent="Projectile"]
+position = Vector2( -0.0615896, 0.0422871 )
+scale = Vector2( 7.04262, 22.8492 )
+texture = ExtResource( 5 )
+
+[node name="Projectile2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 198.338, 727.284 )
+
+[node name="Sprite" type="Sprite" parent="Projectile2"]
+position = Vector2( -0.0615896, 0.0422871 )
+scale = Vector2( 7.04262, 22.8492 )
+texture = ExtResource( 5 )
+
+[node name="Projectile3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 286.648, 728.142 )
+
+[node name="Sprite" type="Sprite" parent="Projectile3"]
+position = Vector2( -0.0615896, 0.0422871 )
+scale = Vector2( 7.04262, 22.8492 )
+texture = ExtResource( 5 )
+
+[node name="Projectile4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 222.345, 722.997 )
+
+[node name="Sprite" type="Sprite" parent="Projectile4"]
+position = Vector2( -0.0615896, 0.0422871 )
+scale = Vector2( 7.04262, 22.8492 )
+texture = ExtResource( 5 )
